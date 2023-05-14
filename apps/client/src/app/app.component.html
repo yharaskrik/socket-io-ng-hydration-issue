@@ -1,1 +1,9 @@
-<apollo-ng-hydration-issue-repro-nx-welcome></apollo-ng-hydration-issue-repro-nx-welcome>
+Root
+<router-outlet></router-outlet>
+<div>
+  <button routerLink="socket-io">Click here to nav to Socket io issue page (then reload page to try hydration)</button>
+</div>
+<!--This one I cannot repro right now, it is instant in this repo but ours takes about 5 seconds might be something else.-->
+<!--<div>-->
+<!--  <button routerLink="ngx-stripe">Click here to nav to ngx-stripe io issue page (then reload page to try hydration)</button>-->
+<!--</div>-->

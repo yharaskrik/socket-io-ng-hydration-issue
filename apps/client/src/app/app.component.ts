@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { ApplicationRef, Component, inject } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent],
   selector: 'apollo-ng-hydration-issue-repro-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  imports: [RouterOutlet, RouterLink],
 })
 export class AppComponent {
-  title = 'client';
+  constructor() {
+    inject(ApplicationRef).isStable.subscribe(console.warn);
+  }
 }
